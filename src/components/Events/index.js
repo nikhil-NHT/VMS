@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import Image from 'next/image'
 import styles from '../../../styles/Events.module.css'
 import globals from '../../utils/global'
@@ -9,14 +9,19 @@ const Events = ({imageUrl,date,time,title,description,points,max,min,
 creator,location,id,category}) => {
 
   const { userData,setUserData } = useContext(GlobalContext)
+  const [joined,setJoined] = useState(false)
   const join = () => {
     if(!globals.getCookie('user_cookie')){
       router.push('/login')
     }
-    setUserData({
-      action: 'SUCCESS',
-      displayResponse: true
-    })
+    setTimeout(() => {
+      setUserData({
+        action: 'SUCCESS',
+        displayResponse: true
+      })
+      setJoined(true)
+    },2500)
+   
   }
 
   return (
@@ -34,7 +39,7 @@ creator,location,id,category}) => {
         <p className={styles.numberPeople}>{min}/{max}</p>
       </div>
       <button className={styles.joinButton} onClick={() => join()}>
-        Join Now!.
+        { !joined  ? 'Join Now!.' : 'Joined'}
       </button>
     </div>
   )

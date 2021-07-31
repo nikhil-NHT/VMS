@@ -12,36 +12,21 @@ const LocationHandler = ({ locationSelected }) => {
     console.log(value)
     setSearchList(true)
     setLocation(value)
-    // let url = `${config.apibaseurl}v1/searchQuestion`
-    //     let searchList = false
-    //     axios.post(url, { t: value }).then((res) => {
-    //         if (res.data !== undefined && res.data !== []) {
-    //             if (res.data.length == 0 && text !== '') {
-    //                 searchList = false
-    //             } else {
-    //                 searchList = true
-    //             }
-    //             setSearchList(searchList)
-    //             setSearchRes(res.data)
-    //         }
-    //     }).catch((err) => {
-    //         console.log('error', err)
-    //     })
-    setSearchRes([{
-      t: '123'
-    },{
-      t: '123'
-    },{
-      t: '123'
-    },{
-      t: '123'
-    },{
-      t: '123'
-    },{
-      t: '123'
-    },{
-      t: '123'
-    }])
+    let url = `${config.url}events`
+        let searchList = false
+        axios.post(url, { search_text: value }).then((res) => {
+            if (res.data !== undefined && res.data !== []) {
+                if (res.data.length == 0 && text !== '') {
+                    searchList = false
+                } else {
+                    searchList = true
+                }
+                setSearchList(searchList)
+                setSearchRes(res.data)
+            }
+        }).catch((err) => {
+            console.log('error', err)
+        })
   }
   return (
     <>

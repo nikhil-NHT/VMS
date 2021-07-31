@@ -51,16 +51,11 @@
 
 .notifyContainer{
   position: fixed;
-  width:500px;
-  height:200px;
-  background-color:#FFF;
-  padding:10px;
-  border:5px solid #CCC;
-  z-index:200;
-  margin: 5% auto;
+  bottom: 0;
   left: 0;
-  right: 0;
-  transform: translate(50%, -50%);
+  margin: auto;
+  width: 100%;
+  text-align: center;
 }
 
 .notifyContainerText{

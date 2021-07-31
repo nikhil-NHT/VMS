@@ -16,10 +16,8 @@ const Success = () => {
     }
   },[userData])
 
-  console.log(userData.displayResponse)
-
   return (
-    !userData.displayResponse && (
+    userData.displayResponse && (
     <div className={styles.notifyContainer}>
       <div className={styles.notifyContainerText}>
         <p className={styles.notifyText}>Joined Successfully</p>

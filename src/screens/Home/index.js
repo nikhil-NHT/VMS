@@ -42,7 +42,11 @@ const Home = () => {
           <h3 className={styles.homeSubTitle}>Join unique, exciting and educational opportunities for social change</h3>
           <div className={styles.searchContainer}>
             <LocationHandler locationSelected={(value) => setLocation(value)} />
-            <button className={styles.searchButton} onClick={() => router.push('/events')}>
+            <button className={styles.searchButton} onClick={() => {
+              if(location> 1 ) {
+                router.push('/events')}
+              }
+            } >
               Search
             </button>
           </div>
