@@ -1,6 +1,8 @@
 import { useState, useContext } from 'react'
 import styles from '../../../styles/Home.module.css'
 import DatePicker from "react-datepicker";
+import config from '../../../app.json'
+import axios from 'axios';
 
 const LocationHandler = ({ locationSelected }) => {
 
@@ -9,12 +11,12 @@ const LocationHandler = ({ locationSelected }) => {
   const [searchList,setSearchList] = useState(false)
 
   const filterLocation = (value) => {
-    console.log(value)
     setSearchList(true)
     setLocation(value)
     let url = `${config.url}events`
         let searchList = false
         axios.post(url, { search_text: value }).then((res) => {
+            console.log(res)
             if (res.data !== undefined && res.data !== []) {
                 if (res.data.length == 0 && text !== '') {
                     searchList = false
