@@ -1,0 +1,31 @@
+.container{
+  max-width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.inputText{
+  padding: 5px 10px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.submitButton{
+  max-width: 100px;
+  padding: 0px 10px;
+  height: 40px;
+  background-color: #008CBA; 
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 20px auto;
+  cursor: pointer;
+  border: 2px solid #008CBA;
+  display: flex;
+  align-items: center;
+}

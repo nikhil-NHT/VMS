@@ -1,121 +1,176 @@
-.container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.main {
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer {
+.container{
   width: 100%;
-  height: 100px;
-  border-top: 1px solid #eaeaea;
+}
+
+.bgImage::before{
+  opacity: 0.5;
+}
+
+.bgImage{
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('/images.jpeg') no-repeat center;
+  position: relative;
+  background-size: cover;
+}
+
+.mainContainer{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 80%;
+  z-index: 100;
 }
 
-.footer a {
+.inputText{
+  padding: 5px 10px;
+  width: 80%;
+}
+
+.searchContainer{
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-grow: 1;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.homeTitle{
+  margin-bottom: 10px;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+.homeSubTitle{
+  margin-bottom: 10px;
 }
 
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
+.descriptionContainer{
   text-align: center;
 }
 
-.description {
-  line-height: 1.5;
-  font-size: 1.5rem;
+.descriptionTitle{
+  color: black;
+  margin-bottom: 10px;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+.descriptionText{
+  font-size: 16px;
+  color: black;
+  margin-bottom: 10px;
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-  margin-top: 3rem;
-}
-
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
+.volunteerButton{
+  max-width: 220px;
+  padding: 0px 10px;
+  height: 40px;
+  background-color: white; 
+  border: none;
+  color: #1E87FF;
+  text-align: center;
   text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  width: 45%;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border: 2px solid #1E87FF;
+  font-weight: bold;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+.topEventsContainer{
+  width: 100%;
+  margin-top: 10px;
 }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+.eventsTitle{
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+.topEvents{
+  width: 100%;
+  overflow: scroll;
+  display: flex;
 }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
+.topEvents::-webkit-scrollbar {
+  border-radius: 4px;
+  width: 1px;
+  background-color: transparent;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+.topEvents::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.globalSearchDropdown {
+  background: #fff;
+  position: absolute;
+  top: 40px;
+  padding: 0 !important;
+  width: 80%;
+  height: auto;
+  max-height: 300px;
+  overflow: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .16);
+  border-radius: 5px;
+  margin-top: 4px;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.globalSearchDropdown::-webkit-scrollbar {
+  border-radius: 4px;
+  width: 6px;
+  background-color: #ffffff;
+}
+
+.globalSearchDropdown::-webkit-scrollbar-thumb {
+  background-color: #dedede;
+  border-radius: 15px;
+}
+
+.gsdLi {
+  margin-right: 0 !important;
+  display: flex !important;
+  align-items: center;
+  padding-left: 16px;
+  overflow: hidden;
+}
+
+.gsdAnchor {
+  display: block;
+  padding: 15px 0;
+  color: #2f2f2f !important;
+  font-weight: 500;
+  font-size: 16px;
+  width: 100%;
+}
+
+.gsdAnchor:hover {
+  color: #000 !important;
+}
+
+.gsdLi:last-child .gsd-anchor {
+  border: none;
+}
+
+.gsdSpan {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.borderTop{
+  width: 100%;
+  height: 2px;
+  background-color: gray;
+  border: 1px solid transparent;
+  border-radius: 5px;  
+  margin: 50px 0px;
 }
